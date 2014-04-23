@@ -1,5 +1,5 @@
 #Chloride - C# libraries which are useful in general
-Licensed under the LGPL, which in the case of .NET managed languages is really easy to fulfill
+Licensed under the LGPL (v3), which in the case of .NET managed languages is really easy to fulfill
 when libraries compile as dynamically linkable by standard. To comply with the license, all you
 need is to include the license somewhere, and leave the included DLLs as is.
 
