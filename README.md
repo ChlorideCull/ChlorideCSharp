@@ -21,6 +21,7 @@ has issues with these, you should consider it a bug and file a report.
   task**, while still remaining readable.
 * **Semantic Versioning**, with a new version on every release, so **you'll instantly know about
   breaking changes.**
+* **Used by the primary developer**, me. Most **bugs will be found and fixed quickly**.
 
 ##The Name
 Should be quite obvious. It's because <s>Chlorine is extremely poisonous and can kill at levels
