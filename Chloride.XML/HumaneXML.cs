@@ -98,7 +98,21 @@ namespace Chloride.XML
 			throw new ArgumentException("Element not found");
 		}
 
+		public HumaneXMLNode getElementByParameter(string param, string value)
+		{
+			foreach (HumaneXMLNode thxl in this.Children)
+			{
+				foreach (KeyValuePair<string, string> kvp in thxl.Attributes)
+				{
+					if ((kvp.Key == param) && (kvp.Value == value))
+						return thxl;
+				}
+			}
+			throw new ArgumentException("Element not found");
+		}
+
 		public HumaneXMLNode this[string tag] { get { return this.getElementByTag(tag); }}
+		public HumaneXMLNode this[string param, string value] { get { return this.getElementByParameter(param, value); }}
 		public HumaneXMLNode this[int index] { get { return this.Children[index]; }}
 	}
 }
