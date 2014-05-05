@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.txt = LICENSE.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloride.ReCaptcha", "Chloride.ReCaptcha\Chloride.ReCaptcha.csproj", "{AB965117-E4C0-4D09-B50F-7FB485BBA536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{7E700840-BB7A-4DDA-8A71-CFBD19FF41BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E700840-BB7A-4DDA-8A71-CFBD19FF41BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E700840-BB7A-4DDA-8A71-CFBD19FF41BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
