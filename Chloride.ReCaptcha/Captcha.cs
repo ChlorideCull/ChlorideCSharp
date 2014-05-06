@@ -62,11 +62,6 @@ namespace Chloride.ReCaptcha
 			cd.Image = wc.DownloadData("http://www.google.com/recaptcha/api/image?c=" + cd.Challenge);
 			return cd;
 		}
-
-		public string[] GetHeaders(CaptchaData cdata, string Response)
-		{
-			return new string[] { "recaptcha_challenge_field: " + cdata.Challenge, "recaptcha_response_field: " + Response };
-		}
     }
 
 	public class CaptchaData

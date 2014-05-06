@@ -24,8 +24,5 @@ Implements a simple way to deal with ReCaptchas, seen from a client's point of v
 **Status:** InDev/Not suitable for production
 
 ###Instruction
-Create the class with Captcha(key), the key you can get by looking at the request URL with Javascript disabled
-(an IFRAME with `//www.google.com/recaptcha/api/noscript?k=KEY`). Use .GetImage() to retrieve the captcha image,
-and then .SubmitCaptcha("the words") to submit the captcha, retrieving the confirmation key. You use this key
-by setting the `recaptcha_response_field` to `manual_challenge` and `recaptcha_challenge_field` to the
-confirmation key.
+Create the class with Captcha(key). Use .GetData() to retrieve the captcha image and the `recaptcha_challenge_field` (Challenge).
+Put the answer in `recaptcha_response_field` when submitting the form. It should pass validation.
