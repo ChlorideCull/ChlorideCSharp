@@ -1,5 +1,0 @@
-/home/chloridecull/GIT/CullCommonLib/CullCommonLib/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/chloridecull/GIT/CullCommonLib/CullCommonLib/bin/Debug/CullCommonLib.dll.mdb
-/home/chloridecull/GIT/CullCommonLib/CullCommonLib/bin/Debug/CullCommonLib.dll
-/home/chloridecull/GIT/CullCommonLib/CullCommonLib/obj/Debug/CullCommonLib.dll
-/home/chloridecull/GIT/CullCommonLib/CullCommonLib/obj/Debug/CullCommonLib.dll.mdb
