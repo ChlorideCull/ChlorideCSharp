@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Chloride.SOCKS
 {
-    public class SOCKS5
+	public class SOCKS4
     {
 		private TcpListener tl;
-		public SOCKS5(IPEndPoint LocalEndPoint)
+		public SOCKS4(IPEndPoint LocalEndPoint)
         {
 			tl = new TcpListener(LocalEndPoint);
         }
