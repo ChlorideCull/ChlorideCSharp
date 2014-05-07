@@ -95,9 +95,7 @@ namespace Chloride.SOCKS
 			if (reject)
 				sock.Close();
 			else
-			{
 				processTCPRequest.Invoke(pr);
-			}
 		}
     }
 }
