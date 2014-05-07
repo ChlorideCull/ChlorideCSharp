@@ -43,7 +43,21 @@ namespace Chloride.SOCKS
     {
 		public static int ProxyTCP(ProxyRequest pr)
 		{
+			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			sock.Connect(pr.Target);
 
+			byte[] buffer = new byte[1];
+			while (pr.NetStream.IsBound)
+			{
+				if (!sock.IsBound)
+				{
+					pr.NetStream.Close();
+					break;
+				}
+				sock.Receive(buffer);
+				pr.NetStream.Send(buffer);
+			}
+			sock.Disconnect(false);
 		}
 
 		public static bool Auth(string User)
