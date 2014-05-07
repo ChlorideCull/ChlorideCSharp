@@ -26,3 +26,8 @@ Implements a simple way to deal with ReCaptchas, seen from a client's point of v
 ###Instruction
 Create the class with Captcha(key). Use .GetData() to retrieve the captcha image and the `recaptcha_challenge_field` (Challenge).
 Put the answer in `recaptcha_response_field` when submitting the form. It should pass validation.
+
+##Chloride.SOCKS
+Implements SOCKS server-side (client-side is built into .NET/Mono).
+
+**Status:** InDev/Not suitable for production
