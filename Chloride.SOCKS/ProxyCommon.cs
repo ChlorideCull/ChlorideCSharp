@@ -58,6 +58,7 @@ namespace Chloride.SOCKS
 				pr.NetStream.Send(buffer);
 			}
 			sock.Disconnect(false);
+			return 0;
 		}
 
 		public static bool Auth(string User)

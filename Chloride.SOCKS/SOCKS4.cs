@@ -34,7 +34,11 @@ namespace Chloride.SOCKS
 			tl = new TcpListener(LocalEndPoint);
         }
 
-		public void Listen(Func<ProxyRequest, int> processTCPRequest = ProxyCommon.ProxyTCP, Func<string, bool> processAuthentication = ProxyCommon.Auth)
+		public void Listen()
+		{
+			this.Listen(ProxyCommon.ProxyTCP, ProxyCommon.Auth);
+		}
+		public void Listen(Func<ProxyRequest, int> processTCPRequest, Func<string, bool> processAuthentication)
 		{
 			tl.Start();
 			while (true)
@@ -83,10 +87,10 @@ namespace Chloride.SOCKS
 			byte[] message = new byte[8];
 			message[0] = 0x00;
 			if (processAuthentication.Invoke(user))
-				message[1] == 0x5a;
+				message[1] = 0x5a;
 			else
 			{
-				message[1] == 0x5b;
+				message[1] = 0x5b;
 				reject = true;
 			}
 			//Why do we have to add gibberish that is ignored
