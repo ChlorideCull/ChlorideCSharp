@@ -64,11 +64,19 @@ namespace Chloride.SOCKS
 				return;
 			}
 			byte[] portip = new byte[6];
+			byte[] bport = new byte[2];
+			byte[] bip = new byte[4];
 			sock.Receive(portip);
+			Array.Copy(portip, bport, 2);
+			Array.Copy(portip, 2, bip, 0, 4);
 			if (BitConverter.IsLittleEndian)
-				Array.Reverse(portip);
-			short port = BitConverter.ToInt16(portip, 0);
-			IPAddress ip = new IPAddress(BitConverter.ToInt64(portip, 2));
+			{
+				Array.Reverse(bport);
+				//Array.Reverse(bip);
+			}
+
+			int port = Convert.ToInt32(BitConverter.ToUInt16(bport, 0));
+			IPAddress ip = new IPAddress((long)BitConverter.ToUInt32(bip, 0));
 
 			List<byte> userid = new List<byte>();
 			while ((userid.Count == 0) || (userid[userid.Count - 1] != 0x00))
@@ -96,6 +104,21 @@ namespace Chloride.SOCKS
 			//Why do we have to add gibberish that is ignored
 			System.Text.ASCIIEncoding.ASCII.GetBytes("P0NIES").CopyTo(message, 2);
 			sock.Send(message);
+			#if DEBUG
+			Console.WriteLine("New tunnel!");
+			Console.Write("\nPort/IP: ");
+			foreach (byte b in portip)
+			{
+				Console.Write(b);
+				Console.Write(" ");
+            }
+			Console.WriteLine();
+			Console.WriteLine(port);
+			Console.WriteLine(BitConverter.ToUInt32(portip, 2));
+			Console.WriteLine(verinfo.Length + portip.Length);
+			Console.WriteLine(reject);
+			Console.Out.Flush();
+			#endif
 			if (reject)
 				sock.Close();
 			else

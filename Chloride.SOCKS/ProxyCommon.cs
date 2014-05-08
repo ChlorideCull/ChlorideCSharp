@@ -22,6 +22,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace Chloride.SOCKS
 {
@@ -46,24 +47,52 @@ namespace Chloride.SOCKS
 			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			sock.Connect(pr.Target);
 
-			byte[] buffer = new byte[1];
-			while (pr.NetStream.IsBound)
+			bool Lock = true;
+			Thread inco = new Thread(() => passthrough(pr.NetStream, sock, ref Lock));
+			Thread outg = new Thread(() => passthrough(sock, pr.NetStream, ref Lock));
+			inco.Start();
+			outg.Start();
+
+			while (true)
 			{
-				if (!sock.IsBound)
+				if (!Lock)
 				{
+					inco.Abort();
+					outg.Abort();
 					pr.NetStream.Close();
+					sock.Close();
 					break;
 				}
-				sock.Receive(buffer);
-				pr.NetStream.Send(buffer);
+				Thread.Sleep(10);
 			}
-			sock.Disconnect(false);
 			return 0;
 		}
 
 		public static bool Auth(string User)
 		{
 			return true;
+		}
+
+		private static void passthrough(Socket From, Socket To, ref bool Lock)
+		{
+			byte[] buffer = new byte[1];
+			while (Lock)
+			{
+				//Sockets can be killed due to race condition I don't know how to get rid of
+				try
+				{
+					From.Receive(buffer);
+					To.Send(buffer);
+				}
+				catch (SocketException)
+				{
+					#if DEBUG
+					Console.WriteLine("Thread ended.");
+					#endif
+					Lock = false;
+					return;
+				}
+			}
 		}
     }
 }

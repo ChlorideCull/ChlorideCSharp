@@ -31,3 +31,6 @@ Put the answer in `recaptcha_response_field` when submitting the form. It should
 Implements SOCKS server-side (client-side is built into .NET/Mono).
 
 **Status:** InDev/Not suitable for production
+
+###Instructions
+Create a SOCKS4 class, run with .Listen(proxyMethod, authMethod), or without arguments to use the default ones implemented in ProxyCommon.
