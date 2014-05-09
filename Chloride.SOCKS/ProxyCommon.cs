@@ -45,7 +45,15 @@ namespace Chloride.SOCKS
 		public static int ProxyTCP(ProxyRequest pr)
 		{
 			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			sock.Connect(pr.Target);
+			try {
+				sock.Connect(pr.Target);
+			} catch (SocketException ex) {
+				#if DEBUG
+				Console.WriteLine(ex);
+				#endif
+				pr.NetStream.Close();
+				return 1;
+			}
 
 			bool Lock = true;
 			Thread inco = new Thread(() => passthrough(pr.NetStream, sock, ref Lock));
