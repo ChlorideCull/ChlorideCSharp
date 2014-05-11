@@ -27,12 +27,12 @@ using System.Collections.Generic;
 namespace Chloride.SOCKS
 {
 	public class SOCKS4
-    {
+	{
 		private TcpListener tl;
 		public SOCKS4(IPEndPoint LocalEndPoint)
-        {
+		{
 			tl = new TcpListener(LocalEndPoint);
-        }
+		}
 
 		public void Listen()
 		{
@@ -111,7 +111,7 @@ namespace Chloride.SOCKS
 			{
 				Console.Write(b);
 				Console.Write(" ");
-            }
+			}
 			Console.WriteLine();
 			Console.WriteLine(port);
 			Console.WriteLine(BitConverter.ToUInt32(portip, 2));
@@ -124,6 +124,6 @@ namespace Chloride.SOCKS
 			else
 				processTCPRequest.Invoke(pr);
 		}
-    }
+	}
 }
 

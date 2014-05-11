@@ -41,7 +41,7 @@ namespace Chloride.SOCKS
 	}
 
 	public static class ProxyCommon
-    {
+	{
 		public static int ProxyTCP(ProxyRequest pr)
 		{
 			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -102,6 +102,6 @@ namespace Chloride.SOCKS
 				}
 			}
 		}
-    }
+	}
 }
 
