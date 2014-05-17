@@ -34,3 +34,9 @@ Implements SOCKS server-side (client-side is built into .NET/Mono).
 
 ###Instructions
 Create a SOCKS4 class, run with .Listen(proxyMethod, authMethod), or without arguments to use the default ones implemented in ProxyCommon.
+
+##Chloride.FourChan
+Lets you poke at 4chan's API - both the official one and the defacto posting one used on the site.
+*Not official, not endorsed by 4chan, moot or any other important figure on the boards.*
+
+**Status:** InDev/Not suitable for production

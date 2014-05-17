@@ -16,12 +16,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloride.ReCaptcha", "Chlor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloride.SOCKS", "Chloride.SOCKS\Chloride.SOCKS.csproj", "{586340CA-35AC-4928-9D45-1A2D053B1293}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloride.FourChan", "Chloride.FourChan\Chloride.FourChan.csproj", "{232FC041-438C-4435-AAAE-BC26A823D6B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{232FC041-438C-4435-AAAE-BC26A823D6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232FC041-438C-4435-AAAE-BC26A823D6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232FC041-438C-4435-AAAE-BC26A823D6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232FC041-438C-4435-AAAE-BC26A823D6B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{586340CA-35AC-4928-9D45-1A2D053B1293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{586340CA-35AC-4928-9D45-1A2D053B1293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{586340CA-35AC-4928-9D45-1A2D053B1293}.Release|Any CPU.ActiveCfg = Release|Any CPU
