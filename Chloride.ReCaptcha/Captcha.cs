@@ -53,10 +53,10 @@ namespace Chloride.ReCaptcha
 				if (type == "challenge")
 					cd.Challenge = mx.Captures[1].Value;
 				else if (type == "timeout")
-					cd.Expiry = DateTime.Now.AddSeconds(mx.Captures[1].Value);
-				else if ((type == "programming_error") && (mx.Captures[1] != ""))
+					cd.Expiry = DateTime.Now.AddSeconds(Convert.ToDouble(mx.Captures[1].Value));
+				else if ((type == "programming_error") && (mx.Captures[1].Value != ""))
 					throw new ArgumentException("Programming error: " + mx.Captures[1].Value);
-				else if ((type == "error_message") && (mx.Captures[1] != ""))
+				else if ((type == "error_message") && (mx.Captures[1].Value != ""))
 					throw new ArgumentException("Error: " + mx.Captures[1].Value);
 			}
 			cd.Image = wc.DownloadData("http://www.google.com/recaptcha/api/image?c=" + cd.Challenge);
