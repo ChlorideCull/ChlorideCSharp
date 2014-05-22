@@ -60,6 +60,7 @@ namespace Chloride.ReCaptcha
 					throw new ArgumentException("Error: " + mx.Captures[1].Value);
 			}
 			cd.Image = wc.DownloadData("http://www.google.com/recaptcha/api/image?c=" + cd.Challenge);
+			cd.Key = RCKey;
 			return cd;
 		}
     }
@@ -67,14 +68,16 @@ namespace Chloride.ReCaptcha
 	public class CaptchaData
 	{
 		public string Challenge;
+		public string Key;
 		public byte[] Image;
 		public DateTime Expiry;
 
-		public CaptchaData(string challenge, byte[] image, DateTime expire)
+		public CaptchaData(string challenge, byte[] image, DateTime expire, string key)
 		{
 			Challenge = challenge;
 			Image = image;
 			Expiry = expire;
+			Key = key;
 		}
 		public CaptchaData() {}
 	}	
