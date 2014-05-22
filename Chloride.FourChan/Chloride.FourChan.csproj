@@ -37,4 +37,10 @@
     <Compile Include="OfficialAPI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Chloride.ReCaptcha\Chloride.ReCaptcha.csproj">
+      <Project>{AB965117-E4C0-4D09-B50F-7FB485BBA536}</Project>
+      <Name>Chloride.ReCaptcha</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

@@ -19,14 +19,41 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Collections.Generic;
+using Chloride.ReCaptcha;
 
 namespace Chloride.FourChan
 {
     public class PostingAPI
     {
+		private Captcha PostCaptcha;
+		private Dictionary<CaptchaData, string> CaptchaCache;
+
         public PostingAPI()
         {
+			PostCaptcha = new Captcha("6Ldp2bsSAAAAAAJ5uyx_lx34lJeEpTLVkP5k04qc", new Uri("http://boards.4chan.org/"));
+			CaptchaCache = new Dictionary<CaptchaData, string>();
         }
+
+		public CaptchaData GetCaptchaData()
+		{
+			return PostCaptcha.GetData();
+		}
+
+		public void CacheCaptchaResponse(CaptchaData cdata, string response)
+		{
+			if (cdata.Key == "6Ldp2bsSAAAAAAJ5uyx_lx34lJeEpTLVkP5k04qc")
+				CaptchaCache.Add(cdata, response);
+		}
+
+		public void PostResponse(string board, uint threadid, string posttext, byte[] image = null)
+		{
+			throw new NotImplementedException();
+		}
+
+		public uint PostNewThread(string board, string posttext, byte[] image = null)
+		{
+			throw new NotImplementedException();
+		}
     }
 }
-
