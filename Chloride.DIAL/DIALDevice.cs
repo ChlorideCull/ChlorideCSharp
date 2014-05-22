@@ -28,17 +28,17 @@ namespace Chloride.DIAL
     {
 		public DIALDevice(string FriendlyName, string Model, string Manufacturer, string Description, IPEndPoint RESTLocation, string RESTAppsBase)
         {
-
+			throw new NotImplementedException();
         }
 
 		public string GetCurrentApplication()
 		{
-
+			throw new NotImplementedException();
 		}
 
 		public void LaunchApplication(string Name, IDictionary<string, string> Parameters)
 		{
-
+			throw new NotImplementedException();
 		}
     }
 }

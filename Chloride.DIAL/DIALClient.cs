@@ -47,8 +47,8 @@ namespace Chloride.DIAL
 			List<DIALDevice> addresses = new List<DIALDevice>();
 			while (DateTime.Now < now.Add(TimeSpan.FromSeconds(MaxWait)))
 			{
-				byte[] read = udpc.Receive(mcany);
-				string[] headers = Encoding.ASCII.GetString(read).Split("/n");
+				byte[] read = udpc.Receive(ref mcany);
+				string[] headers = Encoding.ASCII.GetString(read).Split('\n');
 				foreach (string header in headers)
 				{
 					if (header.StartsWith("LOCATION: "))
@@ -56,13 +56,13 @@ namespace Chloride.DIAL
 						WebClient wc = new WebClient();
 						string xmlinfo = Encoding.UTF8.GetString(wc.DownloadData(new Uri(header.Substring(10))));
 						string appurl = wc.ResponseHeaders["Application-Url"];
-						string[] appurla = appurl.Split("/", 3, StringSplitOptions.RemoveEmptyEntries);
+						string[] appurla = appurl.Split(new char[] {'/'}, 3, StringSplitOptions.RemoveEmptyEntries);
 						IPAddress ip;
 						int port;
 						if (appurla[1].Contains(":"))
 						{
-							ip = IPAddress.Parse(appurla[1].Split(":")[0]);
-							port = Convert.ToInt32(appurla[1].Split(":")[1]);
+							ip = IPAddress.Parse(appurla[1].Split(':')[0]);
+							port = Convert.ToInt32(appurla[1].Split(':')[1]);
 						}
 						else
 						{
@@ -76,6 +76,7 @@ namespace Chloride.DIAL
 					}
 				}
 			}
+			return addresses.ToArray();
 		}
     }
 }

@@ -1,1 +1,5 @@
 /home/chloridecull/GIT/CullCommonLib/Chloride.DIAL/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/chloridecull/GIT/CullCommonLib/Chloride.DIAL/bin/Debug/Chloride.DIAL.dll.mdb
+/home/chloridecull/GIT/CullCommonLib/Chloride.DIAL/bin/Debug/Chloride.DIAL.dll
+/home/chloridecull/GIT/CullCommonLib/Chloride.DIAL/obj/Debug/Chloride.DIAL.dll
+/home/chloridecull/GIT/CullCommonLib/Chloride.DIAL/obj/Debug/Chloride.DIAL.dll.mdb
