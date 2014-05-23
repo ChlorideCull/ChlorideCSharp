@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloride.ReCaptcha", "Chlor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloride.SOCKS", "Chloride.SOCKS\Chloride.SOCKS.csproj", "{586340CA-35AC-4928-9D45-1A2D053B1293}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{8014C40D-32CC-46A4-A069-90605244F2E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{7E700840-BB7A-4DDA-8A71-CFBD19FF41BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E700840-BB7A-4DDA-8A71-CFBD19FF41BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E700840-BB7A-4DDA-8A71-CFBD19FF41BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8014C40D-32CC-46A4-A069-90605244F2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8014C40D-32CC-46A4-A069-90605244F2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8014C40D-32CC-46A4-A069-90605244F2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8014C40D-32CC-46A4-A069-90605244F2E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB965117-E4C0-4D09-B50F-7FB485BBA536}.Release|Any CPU.ActiveCfg = Release|Any CPU
